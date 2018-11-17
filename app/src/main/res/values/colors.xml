@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#3e3e3e</color>
+    <color name="NormalGray">#B0B0B0</color>
+    <color name="EmptyColor">#00000000</color>
+    <color name="Black">#000000</color>
+    <color name="AlphaHalfBlack">#80000000</color>
+    <color name="Alpha30Black">#1e000000</color>
+    <color name="colorHistoryBkg">#202020</color>
+</resources>

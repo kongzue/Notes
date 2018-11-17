@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/bkg_paper">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="10dp"
+                android:background="#00ffffff"
+                android:gravity="left"
+                android:hint=""
+                android:text=""
+                android:lineSpacingExtra="10dp"
+                android:shadowColor="#58838366"
+                android:shadowDx="0"
+                android:shadowDy="-2"
+                android:shadowRadius="6"
+                android:textColor="#b0353535"
+                android:textColorHint="#7b000000"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="10dp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:background="#00ffffff"
+                android:hint=""
+                android:text=""
+                android:shadowColor="#58838366"
+                android:shadowDx="0"
+                android:shadowDy="-2"
+                android:shadowRadius="6"
+                android:textColor="#52353535"
+                android:textColorHint="#7b000000"
+                android:layout_marginTop="5dp"
+                android:textSize="14dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_importText"
+        android:title="导入..."/>
+    <item android:id="@+id/menu_exportAll"
+        android:title="导出全部"/>
+    <item android:id="@+id/menu_about"
+        android:title="关于「记」"/>
+</menu>

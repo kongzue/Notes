@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/box_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dcdcdc"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".activity.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/img_write_bkg"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:id="@+id/box_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/box_refresher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_refresher"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/img_history" />
+
+                <TextView
+                    android:id="@+id/txt_refresher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:text="历史笔记"
+                    android:textColor="@color/NormalGray"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/box_editor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:id="@+id/scroller"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingRight="5dp"
+                    android:overScrollMode="never"
+                    android:scrollbarSize="4dp"
+                    android:scrollbarThumbVertical="@drawable/scrollbar_vertical_track">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.hanks.lineheightedittext.LineHeightEditText
+                            android:id="@+id/edit_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:background="@color/EmptyColor"
+                            android:gravity="left"
+                            android:hint="8月24日"
+                            android:maxLength="1200"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="15dp"
+                            android:paddingTop="20dp"
+                            android:text=""
+                            android:textColor="#353535"
+                            android:textColorHint="#29000000"
+                            android:textSize="25dp">
+
+                        </com.hanks.lineheightedittext.LineHeightEditText>
+
+                        <com.hanks.lineheightedittext.LineHeightEditText
+                            android:id="@+id/edit_notes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:minHeight="500dp"
+                            android:background="@color/EmptyColor"
+                            android:gravity="left"
+                            android:hint="..."
+                            android:lineSpacingExtra="10dp"
+                            android:maxLength="1200"
+                            android:paddingBottom="35dp"
+                            android:paddingLeft="28dp"
+                            android:paddingRight="18dp"
+                            android:paddingTop="20dp"
+                            android:shadowColor="#58838366"
+                            android:shadowDx="0"
+                            android:shadowDy="-2"
+                            android:shadowRadius="6"
+                            android:textColor="#353535"
+                            android:textColorHint="#7b000000"
+                            android:textSize="18dp">
+
+                        </com.hanks.lineheightedittext.LineHeightEditText>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/box_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_loadMore"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/img_add" />
+
+                <TextView
+                    android:id="@+id/txt_loadMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:text="新建笔记"
+                    android:textColor="@color/NormalGray"
+                    android:textSize="12dp" />
+
+
+            </LinearLayout>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/box_toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/img_toolbar_bkg"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:padding="13dp"
+                android:visibility="gone"
+                android:src="@mipmap/ico_md" />
+
+            <ImageView
+                android:id="@+id/btn_more"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="13dp"
+                android:src="@mipmap/img_more_gray" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/btn_doubleSpace"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_toolbar"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="缩进"
+                android:textColor="@color/colorAccent" />
+
+            <ImageView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/NormalGray" />
+
+            <TextView
+                android:id="@+id/btn_unDo"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_toolbar"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="撤销"
+                android:textColor="@color/colorAccent" />
+
+            <ImageView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/NormalGray" />
+
+            <TextView
+                android:id="@+id/btn_paste"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_toolbar"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="粘贴"
+                android:textColor="@color/colorAccent" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

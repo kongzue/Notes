@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.kongzue.notes"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 5
+        versionName "1.4"
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "记@${defaultConfig.versionName}.apk"
+            }
+        }
+    }
+    buildToolsVersion '28.0.1'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //Kongzue
+    implementation 'com.kongzue.dialog:dialog:2.3.4'
+    implementation 'com.kongzue.baseframework:baseframework:6.5.6.2'
+    implementation 'com.kongzue.kongzuedb:kongzuedb:1.0.1'
+    //Other
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+    implementation 'com.hanks:lineheightedittext-library:1.0'
+    implementation 'ren.qinc.edit:lib:0.0.3'
+}
