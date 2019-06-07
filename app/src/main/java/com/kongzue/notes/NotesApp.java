@@ -3,9 +3,11 @@ package com.kongzue.notes;
 import android.app.Application;
 
 import com.kongzue.baseframework.BaseActivity;
+import com.kongzue.baseframework.BaseFrameworkSettings;
 import com.kongzue.dialog.v2.DialogSettings;
 import com.kongzue.notes.util.DBUtil;
 
+import static com.kongzue.dialog.v2.DialogSettings.STYLE_KONGZUE;
 import static com.kongzue.dialog.v2.DialogSettings.THEME_DARK;
 import static com.kongzue.dialog.v2.DialogSettings.TYPE_IOS;
 import static com.kongzue.dialog.v2.DialogSettings.TYPE_KONGZUE;
@@ -31,10 +33,10 @@ public class NotesApp extends Application {
         super.onCreate();
         me = this;
         
-        BaseActivity.DEBUGMODE = DEBUGMODE;
+        BaseFrameworkSettings.DEBUGMODE = DEBUGMODE;
         DialogSettings.DEBUGMODE = DEBUGMODE;
         
-        DialogSettings.type = TYPE_KONGZUE;
+        DialogSettings.style = STYLE_KONGZUE;
         
         DBUtil.getInstance().init(me);
         DBUtil.getInstance().createTable();

@@ -75,6 +75,7 @@ import java.util.TimerTask;
 
 import ren.qinc.edit.PerformEdit;
 
+import static com.kongzue.baseframework.BaseFrameworkSettings.DEBUGMODE;
 import static com.kongzue.notes.NotesApp.navigationHeight;
 import static com.kongzue.notes.NotesApp.screenHeight;
 import static com.kongzue.notes.NotesApp.screenWidth;
@@ -326,7 +327,7 @@ public class MainActivity extends BaseActivity {
                                 break;
                             case 1:
                                 if (!checkPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"})) {
-                                    DialogSettings.type = DialogSettings.TYPE_MATERIAL;
+                                    DialogSettings.style = DialogSettings.STYLE_MATERIAL;
                                     SelectDialog.show(me, getString(R.string.need_permission_title), getString(R.string.import_need_permission), getString(R.string.start_get_permission), new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -348,7 +349,7 @@ public class MainActivity extends BaseActivity {
                                         
                                         }
                                     });
-                                    DialogSettings.type = DialogSettings.TYPE_KONGZUE;
+                                    DialogSettings.style = DialogSettings.STYLE_KONGZUE;
                                 } else {
                                     new Handler().postDelayed(new Runnable() {
                                         @Override

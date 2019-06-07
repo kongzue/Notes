@@ -105,7 +105,7 @@ public class Importer extends Activity {
     }
     
     private void doErrorTip() {
-        DialogSettings.type = DialogSettings.TYPE_KONGZUE;
+        DialogSettings.style = DialogSettings.STYLE_KONGZUE;
         Notification.show(this, 0, getString(R.string.cannot_import), Notification.TYPE_ERROR);
     }
     

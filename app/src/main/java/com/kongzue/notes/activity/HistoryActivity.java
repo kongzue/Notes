@@ -69,6 +69,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.kongzue.baseframework.BaseFrameworkSettings.DEBUGMODE;
+
 @Layout(R.layout.activity_history)
 @NavigationBarBackgroundColor(a = 0)
 public class HistoryActivity extends BaseActivity {
@@ -112,13 +114,14 @@ public class HistoryActivity extends BaseActivity {
                 viewHolder.txtTime = convertView.findViewById(R.id.txt_time);
                 return viewHolder;
             }
-            
+    
             @Override
-            public void setData(Object viewHolder, Map<String, Object> data) {
+            public void setData(Object viewHolder, Map data, int index) {
                 ViewHolder viewHolders = (ViewHolder) viewHolder;
                 viewHolders.txtText.setText((String) data.get("title"));
                 viewHolders.txtTime.setText((String) data.get("content"));
             }
+    
         });
         
         list.setAdapter(baseAdapter);
@@ -247,7 +250,7 @@ public class HistoryActivity extends BaseActivity {
                             case 2:
                                 DBUtil.getInstance().getDb().delete(dbDataList.get(position));
                                 loadDatas();
-                                baseAdapter.refreshDataChanged(datas);
+                                baseAdapter.refreshMapDataChanged(datas);
                                 if (MainActivity.getMainActivity() != null)
                                     MainActivity.getMainActivity().finish();
                                 break;
@@ -378,7 +381,7 @@ public class HistoryActivity extends BaseActivity {
                     break;
                 case R.id.menu_exportAll:
                     if (!checkPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"})) {
-                        DialogSettings.type = DialogSettings.TYPE_MATERIAL;
+                        DialogSettings.style = DialogSettings.STYLE_MATERIAL;
                         SelectDialog.show(me, getString(R.string.need_permission_title), getString(R.string.import_need_permission), getString(R.string.start_get_permission), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -400,7 +403,7 @@ public class HistoryActivity extends BaseActivity {
                             
                             }
                         });
-                        DialogSettings.type = DialogSettings.TYPE_KONGZUE;
+                        DialogSettings.style = DialogSettings.STYLE_KONGZUE;
                     } else {
                         new Handler().postDelayed(new Runnable() {
                             @Override

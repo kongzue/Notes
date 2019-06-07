@@ -62,7 +62,7 @@ public class DBUtil {
             db.add(dbData, false);
             dbData.set("title", Base64Util.encode(BuildConfig.VERSION_NAME + context.getString(R.string.update_title)));
             dbData.set("content", Base64Util.encode(
-                    "　　「记」现已全新发布，和「给未来写封信」一样的风格，一张信纸，一片记忆，带给你更好的体验。\n　　Less is more，相信这一份简洁能带给你不一样的创作体验！"
+                    "　　「记」现已全新发布，和「给未来写封信」一样的风格，一张信纸，一片记忆，带给你更好的体验。\n　　Less is more，相信这一份简洁能带给你不一样的创作体验！\n　　1.5版本更换了信纸样式，支持了更好的分辨率并优化了界面动画效果，以带来更加完美的用户体验。"
             ));
             dbData.set("time", System.currentTimeMillis());
             dbData.set("isSync", false);
